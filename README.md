@@ -18,4 +18,4 @@ Repository detailing the process of converting Greek text to and from Betacode w
 
 ## beta-code-py
 
-The engine for these notebooks is [beta-code-py](https://github.com/perseids-tools/beta-code-py) which is available under the [MIT license](https://github.com/perseids-tools/beta-code-py?tab=MIT-1-ov-file). Hence these notbooks are also made available under the same license.
+The engine for these notebooks is [beta-code-py](https://github.com/perseids-tools/beta-code-py) which is available under the [MIT license](https://github.com/perseids-tools/beta-code-py?tab=MIT-1-ov-file). Hence these notebooks are also made available under the same license.
