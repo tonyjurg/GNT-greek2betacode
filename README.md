@@ -12,6 +12,6 @@ Repository detailing the process of converting Greek text to and from Betacode w
 
 ## Main notebooks
 
- - [create_NT_wordlist_in_Betacode.ipynb](create_NT_wordlist_in_Betacode.ipynb): Create the wordlist from the N1904 corpus
+ - [Create NT wordlist in Betacode.ipynb](create_NT_wordlist_in_Betacode.ipynb): Create the wordlist from the N1904 corpus.
 
- - [mapping unicode to betacode.ipynb](mapping unicode to betacode.ipynb): The conversion from Unicode to Betacode
+ - [Mapping unicode to betacode.ipynb](mapping_unicode_to_betacode.ipynb): The conversion from Unicode to Betacode.
