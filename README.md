@@ -1,3 +1,5 @@
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+
 # GNTgreek2betacode
 
 Repository detailing the process of converting Greek text to and from Betacode which is a necessary step for applying [Morpheus morphological tagging](https://github.com/perseids-tools/morpheus) to the Greek words in the [N1904-TF](https://centerblc.github.io/N1904/) dataset of the New Testament.
