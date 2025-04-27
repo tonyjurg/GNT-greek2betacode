@@ -21,3 +21,17 @@ Repository detailing the process of converting Greek text to and from Betacode w
 ## beta-code-py
 
 The engine for these notebooks is [beta-code-py](https://github.com/perseids-tools/beta-code-py) which is available under the [MIT license](https://github.com/perseids-tools/beta-code-py?tab=MIT-1-ov-file). Hence these notebooks are also made available under the same license.
+
+## Example usage beta-code library
+
+Transcoding between beta- and uni-code you can easily be done in the following manner:
+
+```python
+import beta_code
+
+beta_code.greek_to_beta_code(u'χαῖρε ὦ κόσμε')
+'xai=re w)= ko/sme'
+
+beta_code.beta_code_to_greek('xai=re w)= ko/sme')
+'χαῖρε ὦ κόσμε'
+```
