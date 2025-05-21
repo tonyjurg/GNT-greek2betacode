@@ -39,3 +39,7 @@ beta_code.beta_code_to_greek('xai=re w)= ko/sme')
 ## Online conversion between Beta- and Uni-code
 
 An online conversion tool was developed by Zachary Fletcher and published in his repository [zfletch/beta-code-converter-js](https://github.com/zfletch/beta-code-converter-js). The tool is available for use online at [apps.perseids.org/beta-code](https://apps.perseids.org/beta-code/).
+
+## Betacode feature for N1904-TF 
+
+A new feature [`betacode`](https://github.com/tonyjurg/N1904addons) has been created that can be loaded as addtional module together with the [N1904-TF](https://centerblc.github.io/N1904/) Text-Fabric dataset of a syntactic anotated Greek New Testament.
