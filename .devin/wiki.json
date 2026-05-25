@@ -1,0 +1,192 @@
+{
+  "repo_notes": [
+    {
+      "content": ""
+    }
+  ],
+  "pages": [
+    {
+      "title": "Overview",
+      "purpose": "High-level introduction to the GNTgreek2betacode project: its purpose, the problem it solves, key components, and how the notebooks, data files, and Text-Fabric feature fit together. Links to all child sections.",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Project Purpose and Background",
+      "purpose": "Explains why Greek Unicode must be converted to Betacode, the role of the Morpheus morphological tagger, the N1904-TF dataset, and the TLG Betacode standard. Covers the project's status, license (MIT), and external dependencies.",
+      "parent": "Overview",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Repository Structure and File Inventory",
+      "purpose": "Describes every file in the repository — notebooks, data artifacts, the tf/ directory, and supporting files — and explains how they relate to each other in the overall workflow.",
+      "parent": "Overview",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Betacode Conversion System",
+      "purpose": "Overview of the Unicode ↔ Betacode conversion layer: the beta-code-py library, the mapping reference notebook, and the known Windows encoding bug. Links to child pages for details.",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Unicode-to-Betacode Mapping Reference",
+      "purpose": "Deep dive into mapping_unicode_to_betacode.ipynb: the beta-code-py library API (greek_to_beta_code / beta_code_to_greek), the unicode_to_beta_code.json mapping file, Betacode diacritic conventions, and example conversions.",
+      "parent": "Betacode Conversion System",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Windows Encoding Bug and Fix",
+      "purpose": "Documents the UnicodeDecodeError (cp1252 vs UTF-8) that occurs when importing beta-code-py v1.1.0 on Windows, the root cause in the library's open() call, the fix in v1.1.1, and the vendored JSON mapping architecture.",
+      "parent": "Betacode Conversion System",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "GNT Word List Generation Pipeline",
+      "purpose": "Overview of the two-path ETL pipeline for producing the Betacode word list from the Greek New Testament corpus. Introduces both the MACULA XML path and the Text-Fabric betacode-feature path, then links to child pages.",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "MACULA XML Extraction Path",
+      "purpose": "Detailed walkthrough of create_NT_wordlist_in_Betacode.ipynb: fetching XML from the tonyjurg/Nestle1904LFT GitHub repo, parsing <w> elements, Unicode normalization analysis (NFC vs NFD), capitalizeIfAllCaps logic, and output artifacts (uniqueWords.txt, gnt_words.txt, accentAnalysis.json, betaCodeToWord.json).",
+      "parent": "GNT Word List Generation Pipeline",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Text-Fabric Betacode Feature Extraction Path",
+      "purpose": "Detailed walkthrough of create_NT_wordlist_from_Betacode-feature.ipynb: loading the CenterBLC/N1904 corpus with the tonyjurg/N1904addons module, using F.betacode.freqList to extract unique tokens, regenerating gnt_words.txt and betaCodeToWord.json from the TF feature.",
+      "parent": "GNT Word List Generation Pipeline",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Output Data Artifacts",
+      "purpose": "Overview of all generated data files and their roles in the downstream Morpheus pipeline. Links to child pages covering the word lists and the mapping dictionaries.",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Betacode Word Lists (gnt_words.txt and uniqueWords.txt)",
+      "purpose": "Describes the structure, ordering, and encoding conventions of gnt_words.txt (Betacode, frequency-ordered, Morpheus input) and uniqueWords.txt (Unicode polytonic Greek, alphabetically sorted). Covers the Betacode symbol conventions used in the files and how they feed into Morpheus cruncher.",
+      "parent": "Output Data Artifacts",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Mapping Dictionaries (betaCodeToWord.json and accentAnalysis.json)",
+      "purpose": "Describes betaCodeToWord.json (Betacode → Unicode lookup table for reverse mapping after Morpheus analysis) and accentAnalysis.json (diagnostic NFC/NFD normalization report per word). Explains how these files are generated and consumed.",
+      "parent": "Output Data Artifacts",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Morpheus Integration and Error Analysis",
+      "purpose": "Overview of how the generated word lists are fed into the Morpheus morphological tagger and how errors are diagnosed. Links to child pages on the morphology results and the error follow-up workflow.",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Morphology Results (gnt_morphology_results.txt)",
+      "purpose": "Documents the schema of gnt_morphology_results.txt: tab-delimited record format, parsing code structure (POS, tense, voice, mood, person, number, gender), lemma field, and how to query the file with regex. Covers the sequential ordering by biblical canon.",
+      "parent": "Morpheus Integration and Error Analysis",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Error Follow-Up Workflow (follow_up_on_error.ipynb)",
+      "purpose": "Explains the diagnostic notebook that reconciles Morpheus 'No response' failures: harvesting failing words from gnt_morphology_results.txt, cross-referencing via F.betacode.s() in Text-Fabric, classifying failures as proper nouns, elided forms, or transcription mismatches, and using sp/typems features for diagnosis.",
+      "parent": "Morpheus Integration and Error Analysis",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Text-Fabric Betacode Feature",
+      "purpose": "Overview of the Text-Fabric integration: the betacode.tf feature file, the N1904addons module, and how the betacode feature is used in TF search templates and API calls. Links to child pages.",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "betacode.tf Feature File",
+      "purpose": "Deep dive into tf/1.0.0/betacode.tf: TF file format (metadata header + data body), the 1241-entry Unicode-to-Betacode mapping, base character and combined diacritic form examples, node-to-value assignment, and how to load the feature with tf.app.use.",
+      "parent": "Text-Fabric Betacode Feature",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "N1904addons Module Integration",
+      "purpose": "Explains how the tonyjurg/N1904addons module extends the CenterBLC/N1904 corpus, how to load it via the mod= parameter in tf.app.use, and how to access the betacode feature (F.betacode.v, F.betacode.s, F.betacode.freqList) alongside other N1904 features.",
+      "parent": "Text-Fabric Betacode Feature",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Glossary",
+      "purpose": "Definitions of all codebase-specific terms, abbreviations, encoding conventions, and domain concepts that an onboarding engineer needs to understand. Each entry includes code pointers to relevant files or functions.",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    }
+  ]
+}
